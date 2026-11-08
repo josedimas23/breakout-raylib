@@ -1,6 +1,16 @@
+# Build output
 build/
 dist/
+breakout
 *.o
+*.d
 *.out
-nbproject/private/
+
+# IDEs
+nbproject/
+.idea/
+.vscode/
+*.swp
+
+# macOS
 .DS_Store

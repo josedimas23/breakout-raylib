@@ -143,7 +143,7 @@ void Particula::intercambiaVelocidad(Particula & otra) {
 
     dx = aux_DX;
     dy = aux_DY;
-    
+
 
 }
 
@@ -151,42 +151,42 @@ void Particula::intercambiaVelocidad(Particula & otra) {
 //PARTE 2-----------------------------------------------------------------------
 
 bool Particula::operator == (const Particula &objeto)const{
-   
+
     bool resultado = false;
-        
+
       if(this->distancia(objeto) < E){
-        
+
         resultado = true;
         }
 
     return resultado;
-    
+
 }
 //extra <<
 ostream &operator << (ostream &flujo, const Particula &objeto){
-    
+
     flujo << "X: " << objeto.GetX() << endl;
-    
+
     flujo << "Y: " <<objeto.GetY() << endl;
-    
+
     flujo << "DX: " << objeto.GetDX() << endl;
-    
+
     flujo << "DY: " << objeto.GetDY() << endl;
 
-    flujo << "RADIO: " << objeto.GetRadio() << endl;    
-    
+    flujo << "RADIO: " << objeto.GetRadio() << endl;
+
    return flujo;
-   
-    
+
+
 }
 
  istream &operator>> (istream &flujo,  Particula &objeto){
     float x, y, radio, dx, dy;
-    
+
     flujo >> x >> y >> dx >> dy >> radio;
-    
+
     objeto = Particula(x, y, dx, dy, radio);
-    
+
     return flujo;
-    
+
  }
