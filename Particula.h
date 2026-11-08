@@ -59,12 +59,12 @@ public:
 
     // realiza un movimiento en una direccion dada
     // dir = {'U', 'D', 'L', 'R'} (arriba, abajo, izq, der)
-    // recibe las dimensiones del mundo para evitar que la partícula 
+    // recibe las dimensiones del mundo para evitar que la partícula
     // salga del mundo
     void moverGrid(char dir, int ancho, int alto);
 
     // rota la partícula sobre el punto (posX, posY) rads radianes
-    // Si quiere transformar grados a radianes debe hacer 
+    // Si quiere transformar grados a radianes debe hacer
     // rads = grados * (M PI / 180.0). La constanteM_PI esta definida en cmath.
     void rotar(float posX, float posY, double rads);
 
@@ -73,13 +73,13 @@ public:
 
     // para simular el choque elástico entre dos partículas
     void intercambiaVelocidad(Particula & otra);
-    
+
     bool operator == (const Particula &objeto) const;
-    
+
     friend ostream& operator<<(ostream &flujo, const Particula & objeto);
 
     friend istream& operator>>(istream &flujo,  Particula & objeto);
-    
+
 };
 
 
@@ -88,4 +88,3 @@ public:
 
 
 #endif /* PARTICULA_H */
-
