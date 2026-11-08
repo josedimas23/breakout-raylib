@@ -1,6 +1,6 @@
-# Breakout C++
+# Breakout · raylib
 
-Proyecto final que implementa una simulación de partículas y un juego tipo Breakout en C++. Escrito para el IDE NetBeans usando Makefiles.
+Breakout en C++ con [raylib](https://www.raylib.com/) y un sistema de partículas propio para la física 2D y las colisiones.
 
 ## Compilación
 - Requiere un compilador de C++ (g++).
