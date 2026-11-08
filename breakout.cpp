@@ -116,7 +116,7 @@ int main(int argc, char* argv[]) {
         if(bola.GetY() >= 590){
             
             EndDrawing();
-            CloseWindow();
+            break;
             
         }
         
@@ -142,7 +142,7 @@ int main(int argc, char* argv[]) {
         if( cont == 5){
             
             EndDrawing();
-            CloseWindow();
+            break;
         }
         
         EndDrawing();
