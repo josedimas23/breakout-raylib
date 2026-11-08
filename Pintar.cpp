@@ -1,44 +1,21 @@
+#include "Pintar.h"
 
-#include "ConjuntoParticulas.h"
-#include "Particula.h"
-#include "ConjuntoParticulas.h"
-#include <cmath>
-#include <iostream>
-#include <assert.h>
-#include <cstdlib>
-#include "raylib.h"
-
-
-using namespace std;
-
-void pintarParticula( const Particula &p, Color c){
-    
-    int rad = p.GetRadio();
-    
-    DrawCircle(p.GetX() - rad, p.GetY() - rad, p.GetRadio(), c);
-    
+Rectangle rectangulo(const Particula &p, float ancho, float alto){
+    return { p.GetX() - ancho / 2, p.GetY() - alto / 2, ancho, alto };
 }
 
-void pintarLadrillo( const Particula &p,int ancho, int alto, Color c){
-    
-    DrawRectangle(p.GetX()-25, p.GetY()-10, ancho, alto, c);
-    //void DrawRectangle(int posX, int posY, int ancho, int alto, Color color);
-    
+void pintarParticula(const Particula &p, Color c){
+    DrawCircleV({ p.GetX(), p.GetY() }, p.GetRadio(), c);
 }
 
-void pintarConjunto( const ConjuntoParticulas &cp, Color c){
-    
-    int N = cp.GetUtiles();
-    
-    for(int i = 0; i < N; i++){
-            
-        pintarLadrillo(cp.obtieneParticula(i),60 , 20,  c);
+void pintarLadrillo(const Particula &p, float ancho, float alto, Color c){
+    Rectangle r = rectangulo(p, ancho, alto);
+    DrawRectangleRec(r, c);
+    DrawRectangleLinesEx(r, 2, Fade(BLACK, 0.25f));
+}
 
+void pintarConjunto(const ConjuntoParticulas &cp, float ancho, float alto, Color c){
+    for(int i = 0; i < cp.GetUtiles(); i++){
+        pintarLadrillo(cp.obtieneParticula(i), ancho, alto, c);
     }
 }
-
-
-
-
-
- 
